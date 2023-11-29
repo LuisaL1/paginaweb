@@ -7,54 +7,96 @@ import Modal from 'react-bootstrap/Modal';
 import { AiOutlineHeart, AiFillHeart, AiOutlineSearch, AiOutlineShoppingCart } from 'react-icons/ai';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
-import Image1 from './Catalogo/Image1.jpg';
-import Image2 from './Catalogo/Image2.jpg';
-import Image3 from './Catalogo/Image3.jpg';
-import Image9 from './Catalogo/image9.jpg';
-import Image10 from './Catalogo/Image10.jpg';
-import Image11 from './Catalogo/Image11.jpg';
-import Cart from './Cart'; 
+import Image1 from './Accesorios/Image1.jpg';
+import Image2 from './Accesorios/Image2.jpg';
+import Image3 from './Accesorios/Image3.jpg';
+import Image4 from './Accesorios/Image4.jpg';
+import Image5 from './Accesorios/Image5.jpg';
+import Image6 from './Accesorios/Image6.jpg';
+import Image7 from './Accesorios/Image7.jpg';
+import Image8 from './Accesorios/Image8.jpg';
+import Image9 from './Accesorios/Image9.jpg';
+import Image10 from './Accesorios/Image10.jpg';
+import Image11 from './Accesorios/Image11.jpg';
+import Image12 from './Accesorios/Image12.jpg';
+import Cart from './Cart';
 
 const products = [
   {
-    id: 1,
-    name: 'Camisa manga larga Unisex',
-    price: 30000,
+    id: 7,
+    name: 'Collar Artesanal Multicolor',
+    price: 35000,
     image: Image1,
   },
   {
-    id: 2,
-    name: 'Chaqueta térmica Hombre',
-    price: 89900,
+    id: 8,
+    name: 'Cadena República Italiana ',
+    price: 29900,
     image: Image2,
   },
   {
-    id: 3,
-    name: 'Chaqueta térmica Mujer',
-    price: 98000,
+    id: 9,
+    name: 'Dúo Gafas Hawaii',
+    price: 30000,
     image: Image3,
   },
   {
-    id: 4,
-    name: 'Suéter Spring Mujer',
+    id: 10,
+    name: 'Dúo Gafas de Gato',
+    price: 35000,
+    image: Image4,
+  },
+  {
+    id: 11,
+    name: 'Gafas Redondas Spring',
+    price: 95000,
+    image: Image5,
+  },
+  {
+    id: 12,
+    name: 'Gorra NY Blanco-Café',
+    price: 40000,
+    image: Image6,
+  },
+  {
+    id: 13,
+    name: 'Gorra NY Blanco-Morado',
+    price: 40000,
+    image: Image7,
+  },
+  {
+    id: 14,
+    name: 'Gorra Ralph Lauren Azul',
     price: 50000,
+    image: Image8,
+  },
+  {
+    id: 15,
+    name: 'Gorra NY Rosa',
+    price: 40000,
     image: Image9,
   },
   {
-    id: 5,
-    name: 'Vestido de gala Zahara',
+    id: 16,
+    name: 'Pulsera paño en Oro',
     price: 95000,
     image: Image10,
   },
   {
-    id: 6,
-    name: 'Falda rosa Spring Gamusa',
-    price: 25000,
+    id: 17,
+    name: 'Pulsera trenzada paño en Oro',
+    price: 100000,
     image: Image11,
-  }
+  },
+  {
+    id: 18,
+    name: 'Case para Iphone 13/ pro max',
+    price: 30000,
+    image: Image12,
+  },
 ];
 
-const Ofertas = () => {
+const Accesorios = () => {
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const [searchText, setSearchText] = useState('');
   const [showModal, setShowModal] = useState(false);
@@ -121,13 +163,13 @@ const Ofertas = () => {
         onClick={handleToggleCart}
       >
         {cartItemCount > 0 && (
-          <span style={{ position: 'absolute', top: '0', right: '0', backgroundColor: 'red', borderRadius: '50%', padding: '2px 6px', color: 'red' }}>
+          <span style={{ position: 'absolute', top: '0', right: '0', backgroundColor: 'red', borderRadius: '50%', padding: '2px 6px', color: 'white' }}>
             {cartItemCount}
           </span>
         )}
       </AiOutlineShoppingCart>
       <h2 className="d-flex flex-column align-items-center" style={titleStyle}>
-      🌟Ofertas especiales🌟
+        Accesorios
       </h2>
       <div>
         <div className="input-group mb-3" style={searchBarStyle}>
@@ -153,7 +195,7 @@ const Ofertas = () => {
         {filteredProducts.map((product) => (
           <Col
             key={product.id}
-            md={2}
+            md={3}
             className=""
             onMouseEnter={() => setHoveredProduct(product.id)}
             onMouseLeave={() => setHoveredProduct(null)}
@@ -196,8 +238,8 @@ const Ofertas = () => {
           <Modal.Header closeButton>
             <Modal.Title>{selectedProduct.name}</Modal.Title>
           </Modal.Header>
-          <Modal.Body >
-            <img src={selectedProduct.image} alt={selectedProduct.name} style={{ width: '50%',display: 'block', margin: 'auto' }} />
+          <Modal.Body>
+            <img src={selectedProduct.image} alt={selectedProduct.name} style={{ width: '50%', display: 'block', margin: 'auto' }} />
             <p>Precio: ${selectedProduct.price}</p>
             {/* Otras propiedades del producto que quieras mostrar */}
           </Modal.Body>
@@ -215,4 +257,6 @@ const Ofertas = () => {
   );
 };
 
-export default Ofertas;
+export default Accesorios;
+
+

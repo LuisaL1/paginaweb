@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 function Card3() {
   const navigate = useNavigate();
   const handleContinueClick = () => {
-    navigate('/Ofertas');
+    navigate('/Moda');
   };
   return (
     <Card className='text-center bg-dark' style={{ width: '18rem' }}>

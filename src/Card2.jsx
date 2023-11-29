@@ -7,10 +7,10 @@ import { useNavigate } from 'react-router-dom';
 function Card2() {
   const navigate = useNavigate();
   const handleContinueClick = () => {
-    navigate('/Ofertas');
+    navigate('/Accesorios');
   };
   return (
-    <Card className='text-center bg-dark' style={{ width: '18rem' }}>
+    <Card className='text-center bg-dark' style={{ width: '18rem'}}>
       <Card.Img variant="top" src={image2} alt="" />
       <Card.Body className='text-light'>
         <Card.Title>Accesorios</Card.Title>

@@ -7,54 +7,97 @@ import Modal from 'react-bootstrap/Modal';
 import { AiOutlineHeart, AiFillHeart, AiOutlineSearch, AiOutlineShoppingCart } from 'react-icons/ai';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
-import Image1 from './Catalogo/Image1.jpg';
-import Image2 from './Catalogo/Image2.jpg';
-import Image3 from './Catalogo/Image3.jpg';
-import Image9 from './Catalogo/image9.jpg';
-import Image10 from './Catalogo/Image10.jpg';
-import Image11 from './Catalogo/Image11.jpg';
-import Cart from './Cart'; 
+import Cart from './Cart';
+import Image1 from './Moda/Image1.jpg';
+import Image2 from './Moda/Image2.jpg';
+import Image3 from './Moda/Image3.jpg';
+import Image4 from './Moda/Image4.jpg';
+import Image5 from './Moda/Image5.jpg';
+import Image6 from './Moda/Image6.jpg';
+import Image7 from './Moda/Image7.jpg';
+import Image8 from './Moda/Image8.jpg';
+import Image9 from './Moda/Image9.jpg';
+import Image10 from './Moda/Image10.jpg';
+import Image11 from './Moda/Image11.jpg';
+import Image12 from './Moda/Image12.jpg';
 
 const products = [
   {
-    id: 1,
-    name: 'Camisa manga larga Unisex',
-    price: 30000,
+    id: 19,
+    name: 'Camisa manga larga Mujer',
+    price: 60000,
     image: Image1,
   },
   {
-    id: 2,
-    name: 'Chaqueta térmica Hombre',
-    price: 89900,
+    id: 20,
+    name: 'Falda plisada rosa',
+    price: 29900,
     image: Image2,
   },
   {
-    id: 3,
-    name: 'Chaqueta térmica Mujer',
-    price: 98000,
+    id: 21,
+    name: 'Conjunto',
+    price: 90000,
     image: Image3,
   },
   {
-    id: 4,
-    name: 'Suéter Spring Mujer',
-    price: 50000,
+    id: 22,
+    name: 'Blusa negra Spring',
+    price: 55000,
+    image: Image4,
+  },
+  {
+    id: 23,
+    name: 'Suéter oversize naranja',
+    price: 95000,
+    image: Image5,
+  },
+  {
+    id: 24,
+    name: 'Falda semi-ajustada plaid',
+    price: 40000,
+    image: Image6,
+  },
+  {
+    id: 25,
+    name: 'Abrigo Banana Republic',
+    price: 203000,
+    image: Image7,
+  },
+  {
+    id: 26,
+    name: 'Conjunto',
+    price: 103000,
+    image: Image8,
+  },
+  {
+    id: 27,
+    name: 'Suéter rayas color gris',
+    price: 80000,
     image: Image9,
   },
   {
-    id: 5,
-    name: 'Vestido de gala Zahara',
-    price: 95000,
+    id: 28,
+    name: 'Suéter color mostaza',
+    price: 80000,
     image: Image10,
   },
   {
-    id: 6,
-    name: 'Falda rosa Spring Gamusa',
-    price: 25000,
+    id: 29,
+    name: 'Suéter color beige',
+    price: 80000,
     image: Image11,
-  }
+  },
+  {
+    id: 30,
+    name: 'Chaqueta UNISEX',
+    price: 100000,
+    image: Image12,
+  },
 ];
 
-const Ofertas = () => {
+
+const Moda = () => {
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const [searchText, setSearchText] = useState('');
   const [showModal, setShowModal] = useState(false);
@@ -121,13 +164,13 @@ const Ofertas = () => {
         onClick={handleToggleCart}
       >
         {cartItemCount > 0 && (
-          <span style={{ position: 'absolute', top: '0', right: '0', backgroundColor: 'red', borderRadius: '50%', padding: '2px 6px', color: 'red' }}>
+          <span style={{ position: 'absolute', top: '0', right: '0', backgroundColor: 'red', borderRadius: '50%', padding: '2px 6px', color: 'white' }}>
             {cartItemCount}
           </span>
         )}
       </AiOutlineShoppingCart>
       <h2 className="d-flex flex-column align-items-center" style={titleStyle}>
-      🌟Ofertas especiales🌟
+        Moda
       </h2>
       <div>
         <div className="input-group mb-3" style={searchBarStyle}>
@@ -153,7 +196,7 @@ const Ofertas = () => {
         {filteredProducts.map((product) => (
           <Col
             key={product.id}
-            md={2}
+            md={3}
             className=""
             onMouseEnter={() => setHoveredProduct(product.id)}
             onMouseLeave={() => setHoveredProduct(null)}
@@ -196,8 +239,8 @@ const Ofertas = () => {
           <Modal.Header closeButton>
             <Modal.Title>{selectedProduct.name}</Modal.Title>
           </Modal.Header>
-          <Modal.Body >
-            <img src={selectedProduct.image} alt={selectedProduct.name} style={{ width: '50%',display: 'block', margin: 'auto' }} />
+          <Modal.Body>
+            <img src={selectedProduct.image} alt={selectedProduct.name} style={{ width: '50%', display: 'block', margin: 'auto' }} />
             <p>Precio: ${selectedProduct.price}</p>
             {/* Otras propiedades del producto que quieras mostrar */}
           </Modal.Body>
@@ -215,4 +258,4 @@ const Ofertas = () => {
   );
 };
 
-export default Ofertas;
+export default Moda;

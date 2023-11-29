@@ -1,8 +1,10 @@
+// Cards.jsx
 import React, { useState } from 'react';
-import Card1 from './Card1'; 
+import Card1 from './Card1';
 import Card2 from './Card2';
 import Card3 from './Card3';
-import 'animate.css/animate.min.css'; // Asegúrate de importar el archivo de estilos animate.css
+import InstagramIcon from './Contáctenos';
+import 'animate.css/animate.min.css';
 
 const Cards = () => {
   const titleStyle = {
@@ -26,6 +28,16 @@ const Cards = () => {
       transition: 'box-shadow 0.3s',
       boxShadow: hoveredCard === cardNumber ? '50px 50px 50px rgba(0, 0, 0, 0.2)' : 'none',
     };
+  };
+
+  const iconContainerStyle = {
+    marginTop: '20px', // Ajusta este valor según sea necesario
+    display: 'flex',
+    justifyContent: 'center',
+  };
+
+  const iconStyle = {
+    marginRight: '20px', // Ajusta este valor para controlar el espacio entre los iconos
   };
 
   return (
@@ -57,9 +69,16 @@ const Cards = () => {
           <Card3 />
         </div>
       </div>
+      <div style={iconContainerStyle}>
+        <InstagramIcon style={iconStyle} />
+        {/* Agrega aquí los demás íconos según sea necesario */}
+      </div>
     </div>
   );
 }
 
 export default Cards;
+
+
+
 
